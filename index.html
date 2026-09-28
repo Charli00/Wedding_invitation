@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation - Princy & Devanesan</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #fff8f1, #f8eee7);
+    color: #263238;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 22px;
+  }
+  .card {
+    width: min(560px, 100%);
+    min-height: 780px;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,.94);
+    border: 1px solid #d6b88a;
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(70,45,30,.16);
+    text-align: center;
+    padding: 48px 28px 35px;
+  }
+  .floral {
+    position: absolute;
+    font-size: 64px;
+    opacity: .72;
+  }
+  .f1 { top: -12px; left: -8px; }
+  .f2 { top: 5px; right: -10px; transform: rotate(20deg); }
+  .f3 { bottom: -15px; left: -12px; transform: rotate(-20deg); }
+  .f4 { bottom: -5px; right: -8px; transform: rotate(25deg); }
+
+  .small-title {
+    letter-spacing: 5px;
+    font-size: 14px;
+    color: #876d50;
+    margin-top: 10px;
+  }
+  h1 {
+    font-size: clamp(38px, 9vw, 58px);
+    font-style: italic;
+    font-weight: 500;
+    margin: 22px 0 5px;
+    color: #25333a;
+  }
+  .amp {
+    font-size: 35px;
+    color: #b28a45;
+    margin: 10px;
+  }
+  .degree { font-size: 16px; letter-spacing: 1px; }
+  .parents {
+    margin: 28px auto 12px;
+    max-width: 440px;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .message {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 430px;
+    margin: 14px auto 22px;
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 430px;
+    margin: 20px auto;
+  }
+  button, .map-link {
+    border: 1px solid #c59d5f;
+    background: #fffaf4;
+    color: #59472e;
+    padding: 13px 10px;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .25s;
+  }
+  button:hover, .map-link:hover {
+    background: #f1dfc6;
+    transform: translateY(-2px);
+  }
+  .details {
+    display: none;
+    max-width: 450px;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background: #fff8ef;
+    border: 1px solid #ead5b5;
+    animation: fade .3s ease;
+  }
+  .details.active { display: block; }
+  .details h3 {
+    margin: 0 0 12px;
+    color: #87663d;
+    font-size: 19px;
+  }
+  .details p {
+    margin: 8px 0;
+    line-height: 1.55;
+  }
+  .calendar {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .quote {
+    margin-top: 24px;
+    font-style: italic;
+    font-size: 15px;
+  }
+  .footer {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #66584d;
+  }
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media(max-width:430px) {
+    .card { padding: 42px 18px 30px; }
+    .buttons { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="floral f1">🌸</div>
+  <div class="floral f2">🌿</div>
+  <div class="floral f3">🌷</div>
+  <div class="floral f4">🌸</div>
+
+  <div class="small-title">THE WEDDING OF</div>
+
+  <h1>P. Princy</h1>
+  <div class="degree">B.Sc., · Genpact, Bangalore</div>
+
+  <div class="amp">&amp;</div>
+
+  <h1>P. Devanesan</h1>
+  <div class="degree">B.E., · RIRCM Pvt. Ltd., Chennai</div>
+
+  <div class="parents">
+    <strong>Mr. N. Prakash &amp; Mrs. GnanaRuby Bramadasam</strong>
+  </div>
+
+  <div class="message">
+    Cordially solicit the pleasure of your family and friends
+    on the occasion of the marriage of our daughter.
+  </div>
+
+  <div class="buttons">
+    <button onclick="show('date')">📅 Wedding Date</button>
+    <button onclick="show('venue')">📍 Wedding Location</button>
+    <button onclick="show('reception')">🎉 Reception</button>
+    <button onclick="show('family')">💐 Invitation</button>
+  </div>
+
+  <div id="date" class="details">
+    <h3>Wedding Day</h3>
+    <p class="calendar">Friday, 16 October 2026</p>
+    <p>🕙 10:00 AM</p>
+    <a class="map-link" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding%20of%20Princy%20%26%20Devanesan&dates=20261016T100000/20261016T120000&details=Wedding%20ceremony" target="_blank">＋ Add to Calendar</a>
+  </div>
+
+  <div id="venue" class="details">
+    <h3>Wedding Ceremony</h3>
+    <p><strong>St. Peter’s Church</strong></p>
+    <p>Ambasamudram, Tamil Nadu</p>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=St.+Peter%27s+Church%2C+Ambasamudram" target="_blank">Open Location in Maps</a>
+  </div>
+
+  <div id="reception" class="details">
+    <h3>Reception &amp; Functions</h3>
+    <p><strong>Velsamy Auditorium</strong></p>
+    <p>Ambasamudram, Tamil Nadu</p>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Velsamy+Auditorium%2C+Ambasamudram" target="_blank">Open Reception Location</a>
+  </div>
+
+  <div id="family" class="details">
+    <h3>With Love &amp; Blessings</h3>
+    <p>S/o. Mr. R. Paul Raja &amp; Mrs. Saral,<br>Vickramasingapuram.</p>
+    <p><em>With Best Compliments from:</em><br>
+    P. Beniel Charles, B.Tech.</p>
+  </div>
+
+  <div class="quote">
+    “He has made everything beautiful in its time”<br>
+    <span>(Eccl. 3:11)</span>
+  </div>
+
+  <div class="footer">
+    🕊️ &nbsp; We warmly invite you to celebrate this special day with us. &nbsp; 🕊️
+  </div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.details').forEach(x => x.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById(id).scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+</script>
+</body>
+</html>
